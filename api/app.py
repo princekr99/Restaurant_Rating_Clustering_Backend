@@ -6,11 +6,11 @@ import os
 app = Flask(__name__)
 
 # Load model & scaler
-model = pickle.load(open(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\kmeans_model.pkl", "rb"))
-scaler = pickle.load(open(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\scaler.pkl", "rb"))
+model = pickle.load(open(r"kmeans_model.pkl", "rb"))
+scaler = pickle.load(open(r"scaler.pkl", "rb"))
 
 # Load dataset
-df = pd.read_csv(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\Dataset .csv")
+df = pd.read_csv(r"Dataset .csv")
 
 FEATURES = [
     "Average Cost for two",
@@ -70,4 +70,5 @@ def recommend():
     return jsonify(results[:10])  # Top 10 restaurants
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
