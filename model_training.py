@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 # -----------------------------
 # Load Dataset
 # -----------------------------
-df = pd.read_csv(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\Dataset .csv")
+df = pd.read_csv(r"Dataset .csv")
 
 # Select numeric features for clustering
 features = [
@@ -51,7 +51,7 @@ df["cluster"] = kmeans.fit_predict(X_scaled)
 # -----------------------------
 # Save Model & Scaler
 # -----------------------------
-pickle.dump(kmeans, open(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\kmeans_model.pkl", "wb"))
-pickle.dump(scaler, open(r"C:\Users\raman\OneDrive\Desktop\Restaurant_Rating_Clustering\scaler.pkl", "wb"))
+pickle.dump(kmeans, open(r"kmeans_model.pkl", "wb"))
+pickle.dump(scaler, open(r"scaler.pkl", "wb"))
 
 print("✅ Model and scaler saved successfully")
