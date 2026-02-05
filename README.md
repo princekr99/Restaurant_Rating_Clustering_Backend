@@ -131,7 +131,7 @@ Flask or FastAPI
 joblib (for model saving)
 
 uvicorn (if FastAPI is used)
-
+ 
 📈 Model Insights
 
 This project focuses on unsupervised clustering using restaurant rating data. Restaurants with similar rating patterns and features will be grouped into meaningful clusters using K-Means.
